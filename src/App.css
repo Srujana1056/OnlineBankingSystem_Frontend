@@ -1,0 +1,1297 @@
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Header Styles */
+.app-header {
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 20px 0; /* slightly taller header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  overflow: visible; /* allow dropdowns to overflow header */
+}
+
+/* Mobile Header */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 12px 0;
+    flex-wrap: wrap;
+  }
+}
+
+/* Spacer that opens when dropdowns are visible */
+/* spacer removed - no longer used */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 32px;
+  top: 0;
+  height: 100%;
+}
+
+/* Mobile Logo */
+@media (max-width: 768px) {
+  .logo-container {
+    left: 16px;
+    position: relative;
+    height: auto;
+  }
+}
+
+.logo-img {
+  height: 44px;
+  margin-right: 12px;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #d32f2f;
+  letter-spacing: 1px;
+}
+
+/* Mobile Logo Text */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 20px;
+  }
+}
+
+/* Navigation Styles */
+.main-nav {
+  margin-left: 32px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .main-nav {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    background: #fff;
+    border-top: 1px solid #e3e3e3;
+  }
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-button {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px; /* slightly larger buttons */
+  font-size: 15px;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.nav-button:hover {
+  filter: brightness(0.95);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e3f2fd;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #bdbdbd;
+  padding: 24px 32px;
+  z-index: 1001;
+  display: grid;
+  gap: 24px;
+}
+
+.accounts-menu {
+  min-width: 260px;
+  max-width: 320px;
+  display: block;
+}
+
+.loan-menu, .cards-menu {
+  min-width: 700px;
+  max-width: 90vw;
+  display: flex;
+  overflow-x: auto;
+}
+
+/* Digital banking dropdown is compact like accounts */
+.digital-menu {
+  min-width: 260px;
+  max-width: 320px;
+  display: block;
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropdown-button {
+  background: none;
+  color: #1976d2;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.apply-now-button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: 500;
+  color: #1976d2;
+}
+
+.dropdown-link {
+  color: #d32f2f;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+.dropdown-header {
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.dropdown-text {
+  color: #333;
+  font-weight: 500;
+}
+
+.loan-column {
+  min-width: 180px;
+}
+
+.loan-apply-button {
+  background: linear-gradient(90deg,#1976d2 60%,#d32f2f 100%);
+}
+
+.cards-column {
+  min-width: 180px;
+}
+
+.cards-apply-button {
+  background: linear-gradient(90deg,#1976d2 60%,#d32f2f 100%);
+}
+
+.digital-banking-button {
+  background: #1976d2;
+  color: #fff;
+}
+
+.dropdown-column-last {
+  justify-content: flex-end;
+  min-width: 120px;
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  z-index: 1;
+  background: #f5f6fa; /* ensure no dark strips */
+}
+
+/* Main Banner Styles */
+.main-banner {
+  background: linear-gradient(90deg, #ff9800 60%, #fff 100%);
+  padding: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.banner-subtitle {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.banner-text {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* Ad Carousel */
+.ad-carousel {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  background: #ff9800; /* fallback color to avoid edges during load */
+}
+
+.ad-media {
+  width: 100%;
+  height: 100%;
+}
+
+.ad-img, .ad-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ad-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(255,152,0,0.85) 60%, rgba(255,255,255,0.2) 100%);
+  padding: 24px 16px;
+}
+
+.ad-cta-button {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 18px;
+  font-weight: 800;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.ad-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.ad-nav {
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ad-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.ad-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  border: none;
+}
+
+.ad-dot.active { background: #fff; }
+
+/* Service Cards Section */
+.service-cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+  background: #f5f6fa;
+  padding: 32px 2vw;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* EMI Section on Home */
+.emi-section {
+  background: #fff;
+  padding: 40px 5vw 60px 5vw;
+}
+
+.emi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.emi-title {
+  color: #d32f2f;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+}
+
+.rate-list {
+  background: #fff9e6;
+  border: 1px solid #ffe2a6;
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rate-item {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.rate-item:hover {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #d32f2f;
+}
+
+/* EMI Widget Styles */
+.emi-widget {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.emi-result {
+  margin-top: 16px;
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #d32f2f 0%, #ffb300 100%);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.emi-amount {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.emi-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reduce repaints and reflows */
+.ad-carousel, .service-card, .emi-widget {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimize scrolling */
+.app-container {
+  scroll-behavior: smooth;
+}
+
+/* Reduce layout shifts */
+.ad-carousel {
+  contain: layout style paint;
+}
+
+@media (max-width: 900px) {
+  .emi-container { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  background: linear-gradient(135deg, #fff 60%, #e3f2fd 100%);
+  border-radius: 32px;
+  box-shadow: 0 4px 16px #e3e3e3;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.card-icon-container {
+  background: #ffeaea;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  font-size: 30px;
+  color: #d32f2f;
+}
+
+.card-title {
+  color: #005ca9;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.card-description {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 12px 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.card-button {
+  background: #fff9e6; /* light cream background */
+  color: #d32f2f;       /* theme red text */
+  border: 2px solid #d32f2f; /* optional border to highlight */
+  border-radius: 16px;
+  padding: 6px 18px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.card-button:hover {
+  background: #ffd580; /* slightly darker on hover */
+  color: #fff;
+}
+
+
+/* Login/Sign Up Buttons */
+.auth-buttons {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 1002;
+  align-items: center;
+}
+
+.login-button, .signup-button {
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px; /* match header size */
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  height: 38px;
+  min-width: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 2px 6px rgb(230, 238, 12);
+  transition: filter 120ms ease, transform 120ms ease;
+}
+
+.login-button {
+  background: #1976d2;
+}
+
+.signup-button {
+  background: #d32f2f;
+}
+
+.login-button:hover, .signup-button:hover {
+  filter: brightness(0.96);
+}
+
+.login-button:active, .signup-button:active {
+  transform: translateY(1px);
+}
+.logout-button {
+  background-color: #f5f5f5; /* light gray background */
+  color: #d32f2f;            /* matches your theme red */
+  border: 1px solid #d32f2f;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #ffffff; /* lighter on hover */
+}
+
+@media (max-width: 768px) {
+  .auth-buttons {
+    right: 12px;
+    gap: 8px;
+  }
+  .login-button, .signup-button {
+    height: 34px;
+    min-width: 74px;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 16px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-cards-section {
+    padding: 16px 12px;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .service-card {
+    width: 100%;
+    height: 180px;
+    padding: 16px 12px;
+    min-height: 180px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .card-description {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .card-button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .dropdown-menu {
+    max-width: 95vw;
+    left: 20px;
+    transform: none;
+  }
+  
+  .accounts-menu {
+    min-width: 300px;
+    grid-template-columns: 1fr;
+  }
+  
+  .loan-menu, .cards-menu {
+    min-width: 300px;
+  }
+  
+  /* Mobile Ad Carousel */
+  .ad-carousel {
+    height: 200px;
+  }
+  
+  .ad-overlay h2 {
+    font-size: 18px;
+  }
+  
+  .ad-overlay p {
+    font-size: 14px;
+  }
+  
+  .ad-cta {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  /* Mobile EMI Calculator */
+  .emi-section {
+    padding: 20px 12px;
+  }
+  
+  .emi-container {
+    padding: 16px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-row label {
+    font-size: 14px;
+  }
+  
+  .form-row input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  /* Mobile Interest Rates */
+  .rate-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .rate-item {
+    padding: 12px;
+  }
+  
+  .rate-item h4 {
+    font-size: 14px;
+  }
+  
+  .rate-item .rate-value {
+    font-size: 18px;
+  }
+  
+  /* Mobile Auth Pages */
+  .auth-page {
+    padding: 20px 16px;
+  }
+  
+  .auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px 20px;
+  }
+  
+  .auth-title {
+    font-size: 24px;
+  }
+  
+  .auth-subtitle {
+    font-size: 14px;
+  }
+  
+  .auth-form {
+    gap: 16px;
+  }
+  
+  .auth-input {
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .auth-submit {
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  /* Mobile Banking Pages */
+  .banking-page {
+    padding: 20px 16px;
+  }
+  
+  .banking-card {
+    padding: 20px 16px;
+  }
+  
+  .banking-form {
+    gap: 16px;
+  }
+  
+  .form-group {
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Mobile Loan Pages */
+  .loan-application-page {
+    padding: 20px 16px;
+  }
+  
+  .loan-form {
+    padding: 20px 16px;
+  }
+}
+
+/* ==========================
+   Auth Pages (Login/Signup)
+   Spotify-like styling
+   ========================== */
+.auth-page {
+  min-height: 100vh;
+  background: #f5f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  color: #213547;
+}
+
+.auth-card {
+  width: 420px;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 24px 8px 24px;
+}
+
+.auth-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffb300; /* yellow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d32f2f; /* red */
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.auth-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 24px 0 24px;
+}
+
+.social-btn {
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  background: #ffffff;
+  color: #333;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-btn:hover { background: #fff9e6; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #777;
+  font-weight: 700;
+  padding: 16px 24px 0 24px;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #eaeaea;
+}
+
+.auth-form {
+  padding: 16px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-label {
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+}
+
+.auth-input {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #213547;
+  padding: 12px 14px;
+  font-size: 15px;
+}
+
+.auth-utility-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.auth-link { color: #d32f2f; text-decoration: none; font-weight: 700; }
+.auth-link:hover { text-decoration: underline; }
+
+.auth-submit {
+  margin-top: 8px;
+  background: #d32f2f; /* red */
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 16px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-submit:hover { filter: brightness(0.98); }
+
+.auth-footer {
+  padding: 20px 24px 24px 24px;
+  text-align: center;
+  color: #555;
+}
+
+.auth-small { font-size: 13px; }
+
+@media (max-width: 480px) {
+  .auth-card { width: 100%; }
+}
+
+/* ==========================
+   Loan Application Pages
+   ========================== */
+.loan-application-page {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 40px 20px;
+  color: #213547;
+}
+
+.loan-header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loan-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #d32f2f;
+  margin-bottom: 16px;
+}
+
+.loan-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.loan-form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+
+.form-section {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d32f2f;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #ffb300;
+  display: inline-block;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fff;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.form-group input[type="file"] {
+  padding: 8px;
+  border: 2px dashed #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+  border-color: #d32f2f;
+  background: #fff5f5;
+}
+
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.document-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.document-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.document-group input[type="file"] {
+  padding: 12px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.document-group input[type="file"]:hover {
+  border-color: #d32f2f;
+  background: #fff5f5;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #d32f2f 0%, #ffb300 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(211, 47, 47, 0.3);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design for Loan Forms */
+@media (max-width: 768px) {
+  .loan-application-page {
+    padding: 20px 10px;
+  }
+  
+  .loan-header h1 {
+    font-size: 2rem;
+  }
+  
+  .loan-form {
+    padding: 24px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .document-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .form-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .submit-button {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loan-form {
+    padding: 16px;
+  }
+  
+  .loan-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .form-section {
+    margin-bottom: 32px;
+  }
+}
+
+/* ==========================
+   Digital Banking Pages
+   ========================== */
+.banking-page {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 40px 20px;
+  color: #213547;
+}
+
+.banking-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 32px;
+}
+
+.banking-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d32f2f;
+  margin: 0 0 8px 0;
+}
+
+.banking-subtitle {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.banking-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.banking-form .form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.banking-form label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.banking-form input,
+.banking-form select,
+.banking-form textarea {
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banking-form input:focus,
+.banking-form select:focus,
+.banking-form textarea:focus {
+  outline: none;
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.banking-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #d32f2f 0%, #ffb300 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: #fff;
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.confirm-box {
+  margin-top: 20px;
+  background: #fff9e6;
+  border: 1px solid #ffe2a6;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 20px;
+  color: #d32f2f;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-home:hover { text-decoration: underline; }
